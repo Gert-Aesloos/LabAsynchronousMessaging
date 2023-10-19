@@ -22,7 +22,7 @@ public class DoctorCreatedEventListener {
 
     @RabbitListener(queues = {"q.doctor-appointment-service"})
     public void onDoctorCreated(DoctorCreatedEvent event) {
-        LOGGER.info("a");
+        LOGGER.info("this is a very specific message");
         this.doctorRepository.save(new Doctor(event.getDoctor().getId(),event.getDoctor().getFieldOfExpertise()));
     }
 }
